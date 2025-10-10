@@ -1,6 +1,7 @@
 # 忽略 Excel (太大、不易 diff)
 *.xlsx
 *.xls
+*.csv
 
 # 忽略大型資料資料夾
 Archive/
