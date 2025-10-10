@@ -22,3 +22,6 @@ Thumbs.db
 *.tmp
 *.bak
 *.log
+
+# word 檔
+*.docx
