@@ -1,0 +1,26 @@
+# Lingo 模型檔
+*.lg4
+
+# 大型資料
+Archive/
+model/
+
+# Excel 或其他大量產生的檔案
+*.xlsx
+*.xls
+*.csv
+
+# Python cache /輔助程式
+__pycache__/
+*.pyc
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 臨時檔案
+*.tmp
+*.bak
+*.log
