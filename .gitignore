@@ -1,16 +1,13 @@
-# Lingo 模型檔
-*.lg4
-
-# 大型資料
-Archive/
-model/
-
-# Excel 或其他大量產生的檔案
+# 忽略 Excel (太大、不易 diff)
 *.xlsx
 *.xls
-*.csv
 
-# Python cache /輔助程式
+# 忽略大型資料資料夾
+Archive/
+# 若你 dataset 很大，也可以忽略整個 data/
+# data/
+
+# Python cache
 __pycache__/
 *.pyc
 
