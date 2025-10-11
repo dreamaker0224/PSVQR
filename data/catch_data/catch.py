@@ -1,14 +1,20 @@
 import yfinance as yf
-import pandas_ta as ta
+import pandas as pd
+import re
 
-# 下載歷史資料
-data = yf.download("^GSPC", start="2023-08-01", end="2023-09-01", auto_adjust=False)
+# 設定代號與下載參數
+symbol = "^IXIC"
+start_date = "2025-04-01"
+end_date = "2025-04-30"
 
-# 計算 RSI
-data['RSI'] = ta.rsi(data['Close'], length=14)
+# 下載 30 分鐘 NASDAQ 資料
+data = yf.download(symbol, start=start_date, end=end_date, interval="30m", auto_adjust=False)
 
-# 計算 MACD（DataFrame 方法，不會回傳 None）
-macd_df = data.ta.macd(fast=12, slow=26, signal=9)
-data = pd.concat([data, macd_df], axis=1)
+# 去除代號中的特殊符號，作為檔名
+filename = re.sub(r'[^A-Za-z0-9]+', '', symbol) + ".csv"
 
+# 輸出為 CSV
+data.to_csv(filename)
+
+print(f"資料已儲存為：{filename}")
 print(data.tail())
