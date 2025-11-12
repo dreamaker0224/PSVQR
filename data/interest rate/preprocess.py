@@ -2,13 +2,13 @@ import pandas as pd
 import numpy as np
 
 # === Excel 路徑 ===
-file_path = r"C:\NCNU\im\informs\PSVQR\data\interest rate\Interest rate.xlsx"
+file_path = r"C:\NCNU\im\informs\PSVQR\experiment\interest\interest_test.xlsx"
 
 # === 讀取 Training sheet ===
 df = pd.read_excel(file_path, sheet_name="Training")
 
-# 假設目標欄位是 'y'（可改成其他欄位名稱）
-C = df['y'].to_numpy()
+# 假設目標欄位是 'y'（可改成其他欄位名稱，例如 'yt-1'、'x3'）
+C = df['yt-1'].to_numpy()
 n = len(C)
 
 # === 計算下三角矩陣 ===
